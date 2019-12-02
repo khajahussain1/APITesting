@@ -1,8 +1,5 @@
 package com.apiclasses;
 
-//import com.jayway.restassured.response.Headers;
-//import com.jayway.restassured.response.Response;
-
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 
@@ -34,6 +31,7 @@ public class ResponseHolder {
 		responseBody = response.asString();
 		//responseBody = response.body().prettyPrint().toString();
 		return responseBody;
+		
 	}
 
 	public static Headers getResponseHeaders() {

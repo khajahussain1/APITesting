@@ -11,7 +11,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectReader;
 import org.testng.Assert;
 
-import com.apiclasses.GetData;
 import com.apiclasses.ResponseHolder;
 //import com.jayway.restassured.response.Response;
 //import static com.jayway.restassured.RestAssured.given;
@@ -21,9 +20,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import gherkin.formatter.model.DataTableRow;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 
 public class Stepdefination
@@ -38,7 +34,6 @@ public class Stepdefination
 	Map<String, Object> query;
 	// Map<String, String> body;
 
-	GetData getdata = new GetData();
 
 	@Given("^the apis are up and running for \"([^\"]*)\"$")
 	public void the_apis_are_up_and_running_for(String url) {
@@ -47,9 +42,9 @@ public class Stepdefination
 
 		response = given().when().get(url);
 
-		Assert.assertEquals(200, response.getStatusCode());
+		Assert.assertEquals(response.getStatusCode(), 200);
 
-		// System.out.println("response.getStatusCode:- "+response.getStatusCode());
+		System.out.println("response.getStatusCode:- "+response.getStatusCode());
 	}
 
 	@When("^a user performs a get request to \"([^\"]*)\"$")
@@ -91,22 +86,22 @@ public class Stepdefination
 		 * body.asString());
 		 */
 
-		// System.out.println("URL:- "+this.url + query);
+		 System.out.println("URL:- "+this.url + query);
 
 		if (query == null) {
 			// RestAssured.defaultParser = Parser.JSON;
 
-			response = given().headers("Content-Type", ContentType.JSON, "Accept", ContentType.JSON).when()
-					.get(this.url).then().contentType(ContentType.JSON).extract().response();
+			/*response = given().headers("Content-Type", ContentType.JSON, "Accept", ContentType.JSON).when()
+					.get(this.url).then().contentType(ContentType.JSON).extract().response();*/
 
-			// response = given().when().get(this.url);
+			 response = given().when().get(this.url);
 
 			String data = response.body().prettyPrint();
 
-			System.out.println("Response of API is :- " + data);
+			//System.out.println("Response of API is :- " + data);
 
 		} else {
-			response = given().queryParameters(query).when().get(this.url);
+			response = given().queryParams(query).when().get(this.url);
 		}
 
 		ResponseHolder.setResponse(response);
@@ -138,7 +133,6 @@ public class Stepdefination
 
 		responseMap = reader.readValue(ResponseHolder.getResponseBody());
 
-		// System.out.println("welcome to india");
 		System.out.println("responseMap:- " + responseMap);
 
 		responseMap = (Map<String, Object>) responseMap.get(filter);
@@ -200,7 +194,7 @@ public class Stepdefination
 		for (DataTableRow row : tables.getGherkinRows()) {
 			query.put(row.getCells().get(0), row.getCells().get(1));
 
-			System.out.println(row.getCells().get(0) + "-->" + row.getCells().get(1));
+			//System.out.println(row.getCells().get(0) + "-->" + row.getCells().get(1));
 
 		}
 
@@ -211,17 +205,18 @@ public class Stepdefination
 		
 		Thread.sleep(1000);
 		
-				
+				System.out.println("responseMap:--"+responseMap.toString());
 		Map<String, Object> responseMaps = (Map<String, Object>) responseMap.get(filter);
+				
 		
 		Thread.sleep(1000);
-		System.out.print("responseMap body is:-  "+responseMaps);
+		System.out.print("responseMaps body is:-  "+responseMaps);
 		
 		for (String key : query.keySet()) {
-			 System.out.println(query.get(key));
-			System.out.println(responseMaps.get(key).toString());
-			Assert.assertTrue(responseMap.containsKey(key));
-			//Assert.assertEquals(query1.get(key), responseMaps.get(key).toString());
+			/* System.out.println(query.get(key));
+			System.out.println(responseMaps.get(key).toString());*/
+			//Assert.assertTrue(responseMaps.containsKey(key));
+			Assert.assertEquals(query.get(key), responseMaps.get(key).toString());
 		}
 
 	}
@@ -261,5 +256,6 @@ public class Stepdefination
 	// given().contentType(ContentType.JSON).body(body).when().post(this.url);
 	// ResponseHolder.setResponse(response);
 	// }
-
+	
+	
 }

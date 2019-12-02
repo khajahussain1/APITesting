@@ -21,113 +21,95 @@ formatter.scenario({
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "the apis are up and running for \"http://cmapi.bananaappscenter.com/\"",
+  "comments": [
+    {
+      "line": 5,
+      "value": "#Given the apis are up and running for \"http://cmapi.bananaappscenter.com/\""
+    },
+    {
+      "line": 6,
+      "value": "#When a user performs a get request to \"api/Location/LocationDetails\""
+    }
+  ],
+  "line": 7,
+  "name": "the apis are up and running for \"https://samples.openweathermap.org/\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
-  "name": "a user performs a get request to \"api/Location/LocationDetails\"",
+  "line": 8,
+  "name": "a user performs a get request to \"data/2.5/weather?q\u003dLondon,uk\u0026appid\u003db6907d289e10d714a6e88b30761fae22\"",
   "keyword": "When "
 });
 formatter.step({
-  "line": 7,
+  "line": 9,
   "name": "and perform the reqest",
   "keyword": "And "
 });
 formatter.step({
-  "line": 8,
+  "line": 10,
   "name": "the response code should be 200",
   "keyword": "Then "
 });
 formatter.step({
   "comments": [
     {
-      "line": 9,
-      "value": "# And I should see json response with pairs on the filetered \"Msg\" node"
-    },
-    {
-      "line": 10,
-      "value": "#| Message    | Success Location Details |"
-    },
-    {
       "line": 11,
-      "value": "#| StatusCode |                      200 |"
+      "value": "#And I should see json response with pairs on the filetered \"Msg\" node"
     },
     {
       "line": 12,
-      "value": "#| isError    | false                    |"
+      "value": "#| Message    | Success Location Details |"
     },
     {
       "line": 13,
+      "value": "#| StatusCode |                      200 |"
+    },
+    {
+      "line": 14,
+      "value": "#| isError    | false                    |"
+    },
+    {
+      "line": 15,
       "value": "#| isSuccess  | true                     |"
     }
   ],
-  "line": 14,
-  "name": "I should see json response with pairs filetered \"[1].pgm\" node",
+  "line": 16,
+  "name": "I should see json response with pairs filetered \"main\" node",
   "rows": [
     {
       "cells": [
-        "Country",
-        "1"
-      ],
-      "line": 15
-    },
-    {
-      "cells": [
-        "CountryName",
-        "India"
-      ],
-      "line": 16
-    },
-    {
-      "cells": [
-        "Latitude",
-        "17.6868"
+        "temp",
+        "280.32"
       ],
       "line": 17
     },
     {
       "cells": [
-        "Location_ID",
-        "5"
+        "pressure",
+        "1012"
       ],
       "line": 18
     },
     {
       "cells": [
-        "Location_Name",
-        "Visakhapatnam"
+        "humidity",
+        "81"
       ],
       "line": 19
     },
     {
       "cells": [
-        "Longitude",
-        "83.2185"
+        "temp_min",
+        "279.15"
       ],
       "line": 20
     },
     {
       "cells": [
-        "State",
-        "1"
+        "temp_max",
+        "281.15"
       ],
       "line": 21
-    },
-    {
-      "cells": [
-        "StateName",
-        "Andhra Pradesh"
-      ],
-      "line": 22
-    },
-    {
-      "cells": [
-        "Status",
-        "true"
-      ],
-      "line": 23
     }
   ],
   "keyword": "Then "
@@ -135,34 +117,34 @@ formatter.step({
 formatter.match({
   "arguments": [
     {
-      "val": "http://cmapi.bananaappscenter.com/",
+      "val": "https://samples.openweathermap.org/",
       "offset": 33
     }
   ],
   "location": "Stepdefination.the_apis_are_up_and_running_for(String)"
 });
 formatter.result({
-  "duration": 6967564618,
+  "duration": 3869509877,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "api/Location/LocationDetails",
+      "val": "data/2.5/weather?q\u003dLondon,uk\u0026appid\u003db6907d289e10d714a6e88b30761fae22",
       "offset": 34
     }
   ],
   "location": "Stepdefination.a_user_performs_a_get_request_to(String)"
 });
 formatter.result({
-  "duration": 172178,
+  "duration": 112897,
   "status": "passed"
 });
 formatter.match({
   "location": "Stepdefination.and_perform_the_reqest()"
 });
 formatter.result({
-  "duration": 2267541020,
+  "duration": 1178475388,
   "status": "passed"
 });
 formatter.match({
@@ -175,21 +157,20 @@ formatter.match({
   "location": "Stepdefination.the_response_code_should_be(int)"
 });
 formatter.result({
-  "duration": 3892487,
+  "duration": 2378760,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "[1].pgm",
+      "val": "main",
       "offset": 49
     }
   ],
   "location": "Stepdefination.i_should_see_json_response_with_pairs_filetered_node(String,DataTable)"
 });
 formatter.result({
-  "duration": 2412549675,
-  "error_message": "java.lang.NullPointerException\r\n\tat com.stepdefination.Stepdefination.i_should_see_json_response_with_pairs_filetered_node(Stepdefination.java:222)\r\n\tat ✽.Then I should see json response with pairs filetered \"[1].pgm\" node(src/test/resources/features/GetData.feature:14)\r\n",
-  "status": "failed"
+  "duration": 2320003715,
+  "status": "passed"
 });
 });
