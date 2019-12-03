@@ -7,11 +7,11 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 24202190,
+  "duration": 24392868,
   "status": "passed"
 });
 formatter.before({
-  "duration": 72496,
+  "duration": 65699,
   "status": "passed"
 });
 formatter.scenario({
@@ -132,7 +132,7 @@ formatter.match({
   "location": "GetRequestSteps.the_apis_are_up_and_running_for(String)"
 });
 formatter.result({
-  "duration": 4011346688,
+  "duration": 4142064870,
   "status": "passed"
 });
 formatter.match({
@@ -145,14 +145,14 @@ formatter.match({
   "location": "GetRequestSteps.a_user_performs_a_get_request_to(String)"
 });
 formatter.result({
-  "duration": 182750,
+  "duration": 121203,
   "status": "passed"
 });
 formatter.match({
   "location": "GetRequestSteps.and_perform_the_reqest()"
 });
 formatter.result({
-  "duration": 1796696392,
+  "duration": 1838090981,
   "status": "passed"
 });
 formatter.match({
@@ -165,7 +165,7 @@ formatter.match({
   "location": "GetRequestSteps.the_response_code_should_be(int)"
 });
 formatter.result({
-  "duration": 1182584,
+  "duration": 1176920,
   "status": "passed"
 });
 formatter.match({
@@ -178,19 +178,19 @@ formatter.match({
   "location": "GetRequestSteps.i_should_see_json_response_with_pairs_filetered_node(String,DataTable)"
 });
 formatter.result({
-  "duration": 2488350114,
+  "duration": 4367724296,
   "status": "passed"
 });
 formatter.after({
-  "duration": 97793,
+  "duration": 51352,
   "status": "passed"
 });
 formatter.after({
-  "duration": 59658,
+  "duration": 61923,
   "status": "passed"
 });
 formatter.after({
-  "duration": 15103,
+  "duration": 29829,
   "status": "passed"
 });
 });

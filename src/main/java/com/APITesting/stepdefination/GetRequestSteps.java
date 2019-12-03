@@ -34,37 +34,37 @@ public class GetRequestSteps
 	Map<String, Object> responseMap;
 	Map<String, Object> query;
 	Map<String, String> body;
-	
+
 	TestContext testContext;
 	GetRequestMethods getRequestMethods;
-	
-	public GetRequestSteps(TestContext context)
-	{
+
+	public GetRequestSteps(TestContext context) {
 		testContext = context;
-		getRequestMethods = testContext.getMethodImplimentationManager().getRequestMethods();
+		getRequestMethods = testContext.getapiManager().getRequestMethods();
 	}
-	
 
 	@Given("^the apis are up and running for \"([^\"]*)\"$")
 	public void the_apis_are_up_and_running_for(String url) {
-		
+
 		getRequestMethods.apisAreUpAndRunning(url);
 
-		/*this.url = url;
-
-		response = given().when().get(url);
-
-		Assert.assertEquals(response.getStatusCode(), 200);
-
-		System.out.println("response.getStatusCode:- "+response.getStatusCode());*/
+		/*
+		 * this.url = url;
+		 * 
+		 * response = given().when().get(url);
+		 * 
+		 * Assert.assertEquals(response.getStatusCode(), 200);
+		 * 
+		 * System.out.println("response.getStatusCode:- "+response.getStatusCode());
+		 */
 	}
 
 	@When("^a user performs a get request to \"([^\"]*)\"$")
 	public void a_user_performs_a_get_request_to(String api_url) {
-		
+
 		getRequestMethods.userPerformsGetRequest(api_url);
 
-		//this.url = this.url + api_url;
+		// this.url = this.url + api_url;
 
 	}
 
@@ -101,40 +101,40 @@ public class GetRequestSteps
 		 * body.asString());
 		 */
 
-		/* System.out.println("URL:- "+this.url + query);
-
-		if (query == null) {
-			// RestAssured.defaultParser = Parser.JSON;
-
-			response = given().headers("Content-Type", ContentType.JSON, "Accept", ContentType.JSON).when()
-					.get(this.url).then().contentType(ContentType.JSON).extract().response();
-
-			 response = given().when().get(this.url);
-
-			String data = response.body().prettyPrint();
-
-			//System.out.println("Response of API is :- " + data);
-
-		} else {
-			response = given().queryParams(query).when().get(this.url);
-		}
-
-		ResponseHolder.setResponse(response);*/
+		/*
+		 * System.out.println("URL:- "+this.url + query);
+		 * 
+		 * if (query == null) { // RestAssured.defaultParser = Parser.JSON;
+		 * 
+		 * response = given().headers("Content-Type", ContentType.JSON, "Accept",
+		 * ContentType.JSON).when()
+		 * .get(this.url).then().contentType(ContentType.JSON).extract().response();
+		 * 
+		 * response = given().when().get(this.url);
+		 * 
+		 * String data = response.body().prettyPrint();
+		 * 
+		 * //System.out.println("Response of API is :- " + data);
+		 * 
+		 * } else { response = given().queryParams(query).when().get(this.url); }
+		 * 
+		 * ResponseHolder.setResponse(response);
+		 */
 	}
 
 	@Then("^the response code should be (\\d+)$")
 	public void the_response_code_should_be(int responseCode) {
 
 		getRequestMethods.responseCodeShouldBe(responseCode);
-		//Assert.assertEquals(responseCode, ResponseHolder.getResponseCode());
+		// Assert.assertEquals(responseCode, ResponseHolder.getResponseCode());
 	}
 
-	@SuppressWarnings("unchecked")
 	@Then("^I should see json response with pairs on the filetered \"([^\"]*)\" node$")
 	public void i_should_see_json_response_with_pairs_on_the_filetered_node(String filter, DataTable dataTable)
-			throws JsonProcessingException, IOException {
+			throws Throwable {
+		getRequestMethods.ShouldeSeeJsonResponseWithPairsOnTheFileteredNode(filter, dataTable);
 
-		Map<String, Object> query = new LinkedHashMap<String, Object>();
+		/*Map<String, Object> query = new LinkedHashMap<String, Object>();
 
 		// query = new LinkedHashMap<String, Object>();
 
@@ -144,7 +144,7 @@ public class GetRequestSteps
 		}
 
 		// System.out.println(query);
-		
+
 		ObjectReader reader = new ObjectMapper().reader(Map.class);
 
 		responseMap = reader.readValue(ResponseHolder.getResponseBody());
@@ -159,16 +159,16 @@ public class GetRequestSteps
 			// System.out.println(responseMap.get(key).toString());
 			Assert.assertTrue(responseMap.containsKey(key));
 			Assert.assertEquals(query.get(key), responseMap.get(key).toString());
-		}
+		}*/
 
 	}
 
-	@SuppressWarnings("unchecked")
 	@Then("^I shoulde see json response with pairs on the filetered \"([^\"]*)\" node$")
 	public void i_shoulde_see_json_response_with_pairs_on_the_filetered_node(String filters, DataTable dataTable)
 			throws Throwable {
+		getRequestMethods.shouldSeeJsonResponseWithPairsFileteredNode(filters, dataTable);
 
-		Map<String, Object> query1 = new LinkedHashMap<String, Object>();
+		/*Map<String, Object> query1 = new LinkedHashMap<String, Object>();
 
 		// query = new LinkedHashMap<String, Object>();
 
@@ -196,7 +196,7 @@ public class GetRequestSteps
 			System.out.println(responseMap.get(key).toString());
 			Assert.assertTrue(responseMap.containsKey(key));
 			Assert.assertEquals(query1.get(key), responseMap.get(key).toString());
-		}
+		}*/
 	}
 
 	@SuppressWarnings("unchecked")
@@ -204,49 +204,47 @@ public class GetRequestSteps
 	public void i_should_see_json_response_with_pairs_filetered_node(String filter, DataTable tables) throws Throwable {
 
 		getRequestMethods.shouldSeeJsonResponseWithPairsFileteredNode(filter, tables);
-		/*query = new LinkedHashMap<String, Object>();
-
-		// query = new LinkedHashMap<String, Object>();
-
-		for (DataTableRow row : tables.getGherkinRows()) {
-			query.put(row.getCells().get(0), row.getCells().get(1));
-
-			//System.out.println(row.getCells().get(0) + "-->" + row.getCells().get(1));
-
-		}
-		JsonPath jsonPathValidator = response.jsonPath();
-		System.out.println("jsonPathValidator:-"+jsonPathValidator.prettyPrint());
-
-		
-		ObjectReader reader = new ObjectMapper().reader(Map.class);
-
-		responseMap = reader.readValue(ResponseHolder.getResponseBody());
-		
-		Thread.sleep(1000);
-		
-				System.out.println("responseMap:--"+responseMap.toString());
-		Map<String, Object> responseMaps = (Map<String, Object>) responseMap.get(filter);
-				
-		
-		Thread.sleep(1000);
-		System.out.print("responseMaps body is:-  "+responseMaps);
-		
-		for (String key : query.keySet()) {
-			 System.out.println(query.get(key));
-			System.out.println(responseMaps.get(key).toString());
-			Assert.assertTrue(responseMaps.containsKey(key));
-			Assert.assertEquals(query.get(key), responseMaps.get(key).toString());
-			//System.out.println("query.get(key), responseMaps.get(key).toString():-"+query.get(key)+"-->"+ responseMaps.get(key).toString());
-		}
-*/
+		/*
+		 * query = new LinkedHashMap<String, Object>();
+		 * 
+		 * // query = new LinkedHashMap<String, Object>();
+		 * 
+		 * for (DataTableRow row : tables.getGherkinRows()) {
+		 * query.put(row.getCells().get(0), row.getCells().get(1));
+		 * 
+		 * //System.out.println(row.getCells().get(0) + "-->" + row.getCells().get(1));
+		 * 
+		 * } JsonPath jsonPathValidator = response.jsonPath();
+		 * System.out.println("jsonPathValidator:-"+jsonPathValidator.prettyPrint());
+		 * 
+		 * 
+		 * ObjectReader reader = new ObjectMapper().reader(Map.class);
+		 * 
+		 * responseMap = reader.readValue(ResponseHolder.getResponseBody());
+		 * 
+		 * Thread.sleep(1000);
+		 * 
+		 * System.out.println("responseMap:--"+responseMap.toString()); Map<String,
+		 * Object> responseMaps = (Map<String, Object>) responseMap.get(filter);
+		 * 
+		 * 
+		 * Thread.sleep(1000);
+		 * System.out.print("responseMaps body is:-  "+responseMaps);
+		 * 
+		 * for (String key : query.keySet()) { System.out.println(query.get(key));
+		 * System.out.println(responseMaps.get(key).toString());
+		 * Assert.assertTrue(responseMaps.containsKey(key));
+		 * Assert.assertEquals(query.get(key), responseMaps.get(key).toString());
+		 * //System.out.println("query.get(key), responseMaps.get(key).toString():-"
+		 * +query.get(key)+"-->"+ responseMaps.get(key).toString()); }
+		 */
 	}
-	
-	
-//	 @When("^a user post a request to \"([^\"]*)\"$")
-//	 public void a_user_post_a_request_to(String api_url) {
-//	
-//	 this.url = this.url + api_url;
-//	 }
+
+	// @When("^a user post a request to \"([^\"]*)\"$")
+	// public void a_user_post_a_request_to(String api_url) {
+	//
+	// this.url = this.url + api_url;
+	// }
 
 	// @When("^I add the following filters$")
 	// public void I_add_the_following_filters(DataTable dataTable) {
@@ -274,12 +272,12 @@ public class GetRequestSteps
 		response = given().contentType(ContentType.JSON).body(body).when().post(this.url);
 		ResponseHolder.setResponse(response);
 	}
+
 	@When("^and perform the post reqest$")
 	public void and_perform_the_post_reqest() throws Throwable {
 		response = given().contentType(ContentType.JSON).body(this.body).when().post(this.url);
 		ResponseHolder.setResponse(response);
-	    
+
 	}
 
-	
 }

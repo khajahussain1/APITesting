@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9901" started-at="2019-12-03T11:35:36Z" finished-at="2019-12-03T11:35:46Z">
+  <suite name="Default suite" duration-ms="11981" started-at="2019-12-03T12:06:35Z" finished-at="2019-12-03T12:06:47Z">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="9901" started-at="2019-12-03T11:35:36Z" finished-at="2019-12-03T11:35:46Z">
+    <test name="Default test" duration-ms="11981" started-at="2019-12-03T12:06:35Z" finished-at="2019-12-03T12:06:47Z">
       <class name="com.APITesting.testRunner.GetRequestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="setUpClass" is-config="true" duration-ms="404" started-at="2019-12-03T11:35:36Z" finished-at="2019-12-03T11:35:37Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="setUpClass" is-config="true" duration-ms="433" started-at="2019-12-03T12:06:35Z" finished-at="2019-12-03T12:06:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="beforeclass()[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="beforeclass" is-config="true" duration-ms="1" started-at="2019-12-03T11:35:37Z" finished-at="2019-12-03T11:35:37Z">
+        <test-method status="PASS" signature="beforeclass()[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="beforeclass" is-config="true" duration-ms="1" started-at="2019-12-03T12:06:35Z" finished-at="2019-12-03T12:06:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="feature" duration-ms="8840" started-at="2019-12-03T11:35:37Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-12-03T11:35:46Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="feature" duration-ms="10908" started-at="2019-12-03T12:06:36Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-12-03T12:06:47Z">
           <params>
             <param index="0">
               <value>
@@ -29,11 +29,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="testDownClass()[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="testDownClass" is-config="true" duration-ms="2" started-at="2019-12-03T11:35:46Z" finished-at="2019-12-03T11:35:46Z">
+        <test-method status="PASS" signature="testDownClass()[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="testDownClass" is-config="true" duration-ms="4" started-at="2019-12-03T12:06:47Z" finished-at="2019-12-03T12:06:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDownClass -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="tearDownClass" is-config="true" duration-ms="495" started-at="2019-12-03T11:35:46Z" finished-at="2019-12-03T11:35:46Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.APITesting.testRunner.GetRequestRunner@71318ec4]" name="tearDownClass" is-config="true" duration-ms="488" started-at="2019-12-03T12:06:47Z" finished-at="2019-12-03T12:06:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

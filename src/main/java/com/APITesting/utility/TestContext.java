@@ -4,18 +4,17 @@ import com.APITesting.Managers.APIManager;
 
 public class TestContext {
 
-	private APIManager methodImplimentationManager = null;
+	private APIManager apiManager = null;
 
 	public TestContext() {
 
 		System.gc();
-		methodImplimentationManager = new APIManager();
+		apiManager = new APIManager();
 
 	}
 
-	public APIManager getMethodImplimentationManager() {
-		System.out.println("started PageObjectManager object");
-		return methodImplimentationManager;
+	public APIManager getapiManager() {
+		return apiManager;
 	}
 
 }

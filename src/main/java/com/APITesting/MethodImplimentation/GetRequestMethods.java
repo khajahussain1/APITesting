@@ -2,13 +2,16 @@ package com.APITesting.MethodImplimentation;
 
 import static io.restassured.RestAssured.given;
 
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectReader;
 import org.testng.Assert;
 
+import com.APITesting.TestBase.TestBase;
 import com.APITesting.apiclasses.ResponseHolder;
 
 import cucumber.api.DataTable;
@@ -17,6 +20,7 @@ import io.restassured.response.Response;
 
 public class GetRequestMethods {
 
+	TestBase testBase;
 	String url;
 	String lastName;
 	ResponseHolder responseHolder;
@@ -27,6 +31,7 @@ public class GetRequestMethods {
 	Map<String, String> body;
 
 	public GetRequestMethods() {
+		testBase = new TestBase();
 
 	}
 
@@ -111,8 +116,6 @@ public class GetRequestMethods {
 
 		query = new LinkedHashMap<String, Object>();
 
-		// query = new LinkedHashMap<String, Object>();
-
 		for (DataTableRow row : tables.getGherkinRows()) {
 			query.put(row.getCells().get(0), row.getCells().get(1));
 
@@ -128,12 +131,14 @@ public class GetRequestMethods {
 
 		responseMap = reader.readValue(ResponseHolder.getResponseBody());
 
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
+		testBase.WaiteForApi();
 
 		System.out.println("responseMap:--" + responseMap.toString());
 		Map<String, Object> responseMaps = (Map<String, Object>) responseMap.get(filter);
 
-		Thread.sleep(1000);
+		testBase.WaiteForApi();
+		//Thread.sleep(1000);
 		System.out.print("responseMaps body is:-  " + responseMaps);
 
 		for (String key : query.keySet()) {
@@ -143,11 +148,68 @@ public class GetRequestMethods {
 			 */
 			Assert.assertTrue(responseMaps.containsKey(key));
 			Assert.assertEquals(query.get(key), responseMaps.get(key).toString());
-			// System.out.println("query.get(key),
-			// responseMaps.get(key).toString():-"+query.get(key)+"-->"+
-			// responseMaps.get(key).toString());
+
 		}
 
+	}
+
+	@SuppressWarnings("unchecked")
+	public void ShouldSeeJsonResponseWithPairsOnTheFileteredNode(String filter, DataTable dataTable)
+			throws JsonProcessingException, IOException {
+
+		Map<String, Object> query = new LinkedHashMap<String, Object>();
+
+		for (DataTableRow row : dataTable.getGherkinRows()) {
+			query.put(row.getCells().get(0), row.getCells().get(1));
+
+		}
+
+		ObjectReader reader = new ObjectMapper().reader(Map.class);
+
+		responseMap = reader.readValue(ResponseHolder.getResponseBody());
+
+		System.out.println("responseMap:- " + responseMap);
+
+		responseMap = (Map<String, Object>) responseMap.get(filter);
+		System.out.println("responseMap:-..." + responseMap);
+
+		for (String key : query.keySet()) {
+			// System.out.println(query.get(key));
+			// System.out.println(responseMap.get(key).toString());
+			Assert.assertTrue(responseMap.containsKey(key));
+			Assert.assertEquals(query.get(key), responseMap.get(key).toString());
+		}
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public void ShouldeSeeJsonResponseWithPairsOnTheFileteredNode(String filters, DataTable dataTable)
+			throws Throwable {
+
+		Map<String, Object> query1 = new LinkedHashMap<String, Object>();
+
+		for (DataTableRow row : dataTable.getGherkinRows()) {
+			query1.put(row.getCells().get(0), row.getCells().get(1));
+			// System.out.println(row.getCells().get(0)+"-->"+ row.getCells().get(1));
+
+		}
+
+		// System.out.println(query);
+
+		ObjectReader reader = new ObjectMapper().reader(Map.class);
+
+		responseMap = reader.readValue(ResponseHolder.getResponseBody());
+
+		responseMap = (Map<String, Object>) responseMap.get(filters);
+
+		System.out.println(responseMap);
+
+		for (String key : query1.keySet()) {
+			// System.out.println(query.get(key));
+			System.out.println(responseMap.get(key).toString());
+			Assert.assertTrue(responseMap.containsKey(key));
+			Assert.assertEquals(query1.get(key), responseMap.get(key).toString());
+		}
 	}
 
 }
