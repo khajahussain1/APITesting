@@ -1,10 +1,18 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/GetData.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/GetRequest.feature");
 formatter.feature({
   "line": 1,
   "name": "Rest API testing framework using java rest assured",
   "description": "",
   "id": "rest-api-testing-framework-using-java-rest-assured",
   "keyword": "Feature"
+});
+formatter.before({
+  "duration": 24202190,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 72496,
+  "status": "passed"
 });
 formatter.scenario({
   "line": 4,
@@ -121,10 +129,10 @@ formatter.match({
       "offset": 33
     }
   ],
-  "location": "Stepdefination.the_apis_are_up_and_running_for(String)"
+  "location": "GetRequestSteps.the_apis_are_up_and_running_for(String)"
 });
 formatter.result({
-  "duration": 3869509877,
+  "duration": 4011346688,
   "status": "passed"
 });
 formatter.match({
@@ -134,17 +142,17 @@ formatter.match({
       "offset": 34
     }
   ],
-  "location": "Stepdefination.a_user_performs_a_get_request_to(String)"
+  "location": "GetRequestSteps.a_user_performs_a_get_request_to(String)"
 });
 formatter.result({
-  "duration": 112897,
+  "duration": 182750,
   "status": "passed"
 });
 formatter.match({
-  "location": "Stepdefination.and_perform_the_reqest()"
+  "location": "GetRequestSteps.and_perform_the_reqest()"
 });
 formatter.result({
-  "duration": 1178475388,
+  "duration": 1796696392,
   "status": "passed"
 });
 formatter.match({
@@ -154,10 +162,10 @@ formatter.match({
       "offset": 28
     }
   ],
-  "location": "Stepdefination.the_response_code_should_be(int)"
+  "location": "GetRequestSteps.the_response_code_should_be(int)"
 });
 formatter.result({
-  "duration": 2378760,
+  "duration": 1182584,
   "status": "passed"
 });
 formatter.match({
@@ -167,10 +175,22 @@ formatter.match({
       "offset": 49
     }
   ],
-  "location": "Stepdefination.i_should_see_json_response_with_pairs_filetered_node(String,DataTable)"
+  "location": "GetRequestSteps.i_should_see_json_response_with_pairs_filetered_node(String,DataTable)"
 });
 formatter.result({
-  "duration": 2320003715,
+  "duration": 2488350114,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 97793,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 59658,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 15103,
   "status": "passed"
 });
 });
