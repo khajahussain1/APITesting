@@ -9,13 +9,14 @@ import java.util.Map;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectReader;
-import org.testng.Assert;
+//import org.testng.Assert;
 
 import com.APITesting.TestBase.TestBase;
 import com.APITesting.apiclasses.ResponseHolder;
 
 import cucumber.api.DataTable;
 import gherkin.formatter.model.DataTableRow;
+import org.junit.Assert;
 import io.restassured.response.Response;
 
 public class GetRequestMethods {

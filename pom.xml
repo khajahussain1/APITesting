@@ -9,12 +9,12 @@
 	<name>APITesting</name>
 	<url>http://maven.apache.org</url>
 
-	<repositories>
+	<!--<repositories>
 		<repository>
 			<id>maven-central</id>
 			<url>https://nexus.mvnrepository.com/artifact</url>
 		</repository>
-	</repositories>
+	</repositories>-->
 
 	<!-- <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -97,12 +97,12 @@
 
 
 		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14 -->
-		<dependency>
+		<!--<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc14</artifactId>
 			<version>10.2.0.4.0</version>
 		</dependency>
-
+-->
 
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
@@ -151,7 +151,7 @@
 			<version>20211205</version>
 		</dependency>
 		<!-- LeanFT dependency -->
-		<dependency>
+		<!--<dependency>
 			<groupId>com.hp.lft</groupId>
 			<artifactId>sdk</artifactId>
 			<version>15.0.1</version>
@@ -187,7 +187,7 @@
 			<version>15.0.1</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+-->		<!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
@@ -214,12 +214,12 @@
 			<version>2.1.0.3</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>com.syncron.amazonaws</groupId>
 			<artifactId>simba-athena-jdbc-driver</artifactId>
 			<version>2.0.2</version>
 		</dependency>
-
+-->
 
 
 		<!-- Winium Driver for Desktop app Automation -->

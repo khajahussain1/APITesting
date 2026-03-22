@@ -1,12 +1,13 @@
 package com.APITesting.testRunner;
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import com.cucumber.listener.Reporter;
 
 import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+
 
 @CucumberOptions(features = { "src/test/resources/features/PostRequest.feature" }, glue = {
 		"com/APITesting/stepdefination" }, plugin = { "pretty", "html:target/cucumber-htmlReports",
