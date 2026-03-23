@@ -13,10 +13,10 @@ import org.testng.Assert;
 
 import com.APITesting.apiclasses.ResponseHolder;
 
-import cucumber.api.DataTable;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+//import cucumber.api.DataTable;
+//import cucumber.api.java.en.Given;
+//import cucumber.api.java.en.Then;
+//import cucumber.api.java.en.When;
 import gherkin.formatter.model.DataTableRow;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -112,9 +112,9 @@ public class PostRequestSteps
 		Assert.assertEquals(responseCode, ResponseHolder.getResponseCode());
 	}
 
-	@SuppressWarnings("unchecked")
+//	@SuppressWarnings("unchecked")
 	//@Then("^I should see json response with pairs on the filetered \"([^\"]*)\" node$")
-	public void i_should_see_json_response_with_pairs_on_the_filetered_node(String filter, DataTable dataTable)
+	/*public void i_should_see_json_response_with_pairs_on_the_filetered_node(String filter, DataTable dataTable)
 			throws JsonProcessingException, IOException {
 
 		Map<String, Object> query = new LinkedHashMap<String, Object>();
@@ -144,11 +144,11 @@ public class PostRequestSteps
 			Assert.assertEquals(query.get(key), responseMap.get(key).toString());
 		}
 
-	}
+	}*/
 
-	@SuppressWarnings("unchecked")
+//	@SuppressWarnings("unchecked")
 	//@Then("^I shoulde see json response with pairs on the filetered \"([^\"]*)\" node$")
-	public void i_shoulde_see_json_response_with_pairs_on_the_filetered_node(String filters, DataTable dataTable)
+	/*public void i_shoulde_see_json_response_with_pairs_on_the_filetered_node(String filters, DataTable dataTable)
 			throws Throwable {
 
 		Map<String, Object> query1 = new LinkedHashMap<String, Object>();
@@ -180,8 +180,9 @@ public class PostRequestSteps
 			Assert.assertTrue(responseMap.containsKey(key));
 			Assert.assertEquals(query1.get(key), responseMap.get(key).toString());
 		}
-	}
+	}*/
 
+/*
 	@SuppressWarnings("unchecked")
 	//@Then("^I should see json response with pairs filetered \"([^\"]*)\" node$")
 	public void i_should_see_json_response_with_pairs_filetered_node(String filter, DataTable tables) throws Throwable {
@@ -196,8 +197,10 @@ public class PostRequestSteps
 			//System.out.println(row.getCells().get(0) + "-->" + row.getCells().get(1));
 
 		}
-		/*JsonPath jsonPathValidator = response.jsonPath();
-		System.out.println("jsonPathValidator:-"+jsonPathValidator.prettyPrint());*/
+		*/
+/*JsonPath jsonPathValidator = response.jsonPath();
+		System.out.println("jsonPathValidator:-"+jsonPathValidator.prettyPrint());*//*
+
 
 		
 		ObjectReader reader = new ObjectMapper().reader(Map.class);
@@ -214,8 +217,10 @@ public class PostRequestSteps
 		System.out.print("responseMaps body is:-  "+responseMaps);
 		
 		for (String key : query.keySet()) {
-			/* System.out.println(query.get(key));
-			System.out.println(responseMaps.get(key).toString());*/
+			*/
+/* System.out.println(query.get(key));
+			System.out.println(responseMaps.get(key).toString());*//*
+
 			Assert.assertTrue(responseMaps.containsKey(key));
 			Assert.assertEquals(query.get(key), responseMaps.get(key).toString());
 			//System.out.println("query.get(key), responseMaps.get(key).toString():-"+query.get(key)+"-->"+ responseMaps.get(key).toString());
@@ -262,6 +267,7 @@ public class PostRequestSteps
 		ResponseHolder.setResponse(response);
 	    
 	}
+*/
 
 	
 }

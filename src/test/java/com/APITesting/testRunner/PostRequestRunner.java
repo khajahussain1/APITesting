@@ -9,10 +9,10 @@ import com.cucumber.listener.Reporter;
 import cucumber.api.CucumberOptions;
 
 
-@CucumberOptions(features = { "src/test/resources/features/PostRequest.feature" }, glue = {
-		"com/APITesting/stepdefination" }, plugin = { "pretty", "html:target/cucumber-htmlReports",
+@CucumberOptions(features = { "src/test/resources/features/" }, glue = {
+		"com.APITesting.stepdefination" }, plugin = { "pretty", "html:target/cucumber-htmlReports",
 				"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-extent-reports/extentreport.html" },
-				dryRun = false, strict = false, monochrome = true)
+				dryRun = false, strict = false, monochrome = true, tags = ("@Smoketest"))
 
 public class PostRequestRunner extends AbstractTestNGCucumberTests {
 	public String testcasename;

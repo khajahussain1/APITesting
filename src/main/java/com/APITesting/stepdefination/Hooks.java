@@ -1,10 +1,13 @@
 package com.APITesting.stepdefination;
 
 import com.APITesting.utility.TestContext;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+//import cucumber.api.Scenario;
+//import cucumber.api.java.After;
+//import cucumber.api.java.Before;
 
 public class Hooks {
 

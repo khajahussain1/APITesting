@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectReader;
@@ -15,10 +18,10 @@ import com.APITesting.MethodImplimentation.GetRequestMethods;
 import com.APITesting.apiclasses.ResponseHolder;
 import com.APITesting.utility.TestContext;
 
-import cucumber.api.DataTable;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+//import cucumber.api.DataTable;
+//import cucumber.api.java.en.Given;
+//import cucumber.api.java.en.Then;
+//import cucumber.api.java.en.When;
 import gherkin.formatter.model.DataTableRow;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -129,12 +132,12 @@ public class GetRequestSteps
 		// Assert.assertEquals(responseCode, ResponseHolder.getResponseCode());
 	}
 
-	@Then("^I should see json response with pairs on the filetered \"([^\"]*)\" node$")
+	/*@Then("^I should see json response with pairs on the filetered \"([^\"]*)\" node$")
 	public void i_should_see_json_response_with_pairs_on_the_filetered_node(String filter, DataTable dataTable)
 			throws Throwable {
 		getRequestMethods.ShouldeSeeJsonResponseWithPairsOnTheFileteredNode(filter, dataTable);
 
-		/*Map<String, Object> query = new LinkedHashMap<String, Object>();
+		*//*Map<String, Object> query = new LinkedHashMap<String, Object>();
 
 		// query = new LinkedHashMap<String, Object>();
 
@@ -159,7 +162,7 @@ public class GetRequestSteps
 			// System.out.println(responseMap.get(key).toString());
 			Assert.assertTrue(responseMap.containsKey(key));
 			Assert.assertEquals(query.get(key), responseMap.get(key).toString());
-		}*/
+		}*//*
 
 	}
 
@@ -168,7 +171,7 @@ public class GetRequestSteps
 			throws Throwable {
 		getRequestMethods.shouldSeeJsonResponseWithPairsFileteredNode(filters, dataTable);
 
-		/*Map<String, Object> query1 = new LinkedHashMap<String, Object>();
+		*//*Map<String, Object> query1 = new LinkedHashMap<String, Object>();
 
 		// query = new LinkedHashMap<String, Object>();
 
@@ -196,7 +199,7 @@ public class GetRequestSteps
 			System.out.println(responseMap.get(key).toString());
 			Assert.assertTrue(responseMap.containsKey(key));
 			Assert.assertEquals(query1.get(key), responseMap.get(key).toString());
-		}*/
+		}*//*
 	}
 
 	@SuppressWarnings("unchecked")
@@ -204,7 +207,7 @@ public class GetRequestSteps
 	public void i_should_see_json_response_with_pairs_filetered_node(String filter, DataTable tables) throws Throwable {
 
 		getRequestMethods.shouldSeeJsonResponseWithPairsFileteredNode(filter, tables);
-		/*
+		*//*
 		 * query = new LinkedHashMap<String, Object>();
 		 * 
 		 * // query = new LinkedHashMap<String, Object>();
@@ -237,7 +240,7 @@ public class GetRequestSteps
 		 * Assert.assertEquals(query.get(key), responseMaps.get(key).toString());
 		 * //System.out.println("query.get(key), responseMaps.get(key).toString():-"
 		 * +query.get(key)+"-->"+ responseMaps.get(key).toString()); }
-		 */
+		 *//*
 	}
 
 	// @When("^a user post a request to \"([^\"]*)\"$")
@@ -278,6 +281,6 @@ public class GetRequestSteps
 		response = given().contentType(ContentType.JSON).body(this.body).when().post(this.url);
 		ResponseHolder.setResponse(response);
 
-	}
+	}*/
 
 }

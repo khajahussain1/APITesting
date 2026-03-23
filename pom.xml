@@ -6,8 +6,8 @@
 	<groupId>APITesting</groupId>
 	<artifactId>APITesting</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>APITesting</name>
-	<url>http://maven.apache.org</url>
+	<!--<name>APITesting</name>-->
+	<!--<url>http://maven.apache.org</url>-->
 
 	<!--<repositories>
 		<repository>
@@ -25,14 +25,14 @@
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>7.2.2</version>
+			<version>7.22.1</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
-			<version>7.2.2</version>
+			<version>7.22.1</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
@@ -230,11 +230,11 @@
 		</dependency>
 
 		<!--For REST API Automation -->
-		<dependency>
+		<!--<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-schema-validator</artifactId>
 			<version>4.5.0</version>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>org.everit.json</groupId>
@@ -400,7 +400,7 @@
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
-			<version>4.1.2</version>
+			<version>5.5.4</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -409,12 +409,12 @@
 		<!-- <dependency> <groupId>com.jayway.restassured</groupId> <artifactId>rest-assured</artifactId> 
 			<version>2.9.0</version> <scope>test</scope> </dependency> -->
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.14.3</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency>-->
 
 
 
@@ -440,6 +440,12 @@
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>5.4.0</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- <dependency> <groupId>com.relevantcodes</groupId> <artifactId>extentreports</artifactId> 

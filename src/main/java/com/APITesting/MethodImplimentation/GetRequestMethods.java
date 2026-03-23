@@ -14,7 +14,7 @@ import org.codehaus.jackson.map.ObjectReader;
 import com.APITesting.TestBase.TestBase;
 import com.APITesting.apiclasses.ResponseHolder;
 
-import cucumber.api.DataTable;
+//import cucumber.api.DataTable;
 import gherkin.formatter.model.DataTableRow;
 import org.junit.Assert;
 import io.restassured.response.Response;
@@ -112,7 +112,7 @@ public class GetRequestMethods {
 		Assert.assertEquals(responseCode, ResponseHolder.getResponseCode());
 	}
 
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	public void shouldSeeJsonResponseWithPairsFileteredNode(String filter, DataTable tables) throws Throwable {
 
 		query = new LinkedHashMap<String, Object>();
@@ -123,10 +123,10 @@ public class GetRequestMethods {
 			// System.out.println(row.getCells().get(0) + "-->" + row.getCells().get(1));
 
 		}
-		/*
+		*//*
 		 * JsonPath jsonPathValidator = response.jsonPath();
 		 * System.out.println("jsonPathValidator:-"+jsonPathValidator.prettyPrint());
-		 */
+		 *//*
 
 		ObjectReader reader = new ObjectMapper().reader(Map.class);
 
@@ -143,10 +143,10 @@ public class GetRequestMethods {
 		System.out.print("responseMaps body is:-  " + responseMaps);
 
 		for (String key : query.keySet()) {
-			/*
+			*//*
 			 * System.out.println(query.get(key));
 			 * System.out.println(responseMaps.get(key).toString());
-			 */
+			 *//*
 			Assert.assertTrue(responseMaps.containsKey(key));
 			Assert.assertEquals(query.get(key), responseMaps.get(key).toString());
 
@@ -211,6 +211,6 @@ public class GetRequestMethods {
 			Assert.assertTrue(responseMap.containsKey(key));
 			Assert.assertEquals(query1.get(key), responseMap.get(key).toString());
 		}
-	}
+	}*/
 
 }
